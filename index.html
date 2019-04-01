@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  color: grey;
+  margin: 0;
+  font-family: Arial;
+}
+
+table, th, td {
+  border: 2px solid #64AE7C;
+
+}
+
+
+/* Style tab links */
+.tabs {
+  background-color: #F0BFBF;
+  color: white;
+  float: left;
+ 
+  cursor: pointer;
+  padding: 14px;
+  font-size: 40px;
+  font-family: 'Courier New', Courier, monospace; 
+  width: 50%;
+ 
+}
+
+.tabs:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: grey;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 100px 20px;
+  height: 100%;
+}
+</style>
+</head>
+
+
+
+
+<body>
+
+<button class="tabs" onclick="openPage('first', this, '#F0BFB')">All Recipes</button>
+<button class="tabs" onclick="openPage('About', this, '#F0BFB')">Add Recipes</button>
+
+<div id="first" class="tabcontent">
+  <h1>Home</h1>
+  <p>all of the recipes are listed here</p>
+
+
+  <table style="width:85%">
+    <tr>
+      <th>Recipen Name</th>
+      <th>Recipe</th> 
+    </tr>
+  </table>
+
+
+
+
+
+</div>
+
+<div id="News" class="tabcontent">
+  <h3>News</h3>
+  <p>Some news this fine day!</p> 
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h3>Contact</h3>
+  <p>Get in touch, or swing by for a cup of coffee.</p>
+</div>
+
+<div id="About" class="tabcontent">
+  <h3>About</h3>
+  <p>Who we are and what we do.</p>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 

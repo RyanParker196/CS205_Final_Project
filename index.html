@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<h1>Grans Recipes</h1>
 <style>
 * {box-sizing: border-box}
 /* Set height of body and the document to 100% */
@@ -11,9 +12,33 @@ body, html {
   margin: 0;
   font-family: Arial;
 }
+h1{
+  font-family: 'Courier New', Courier, monospace;
+  color: grey;
+  font-size: 40px;
+  text-align: center;
 
+}
+h3{
+
+  font-family: 'Courier New', Courier, monospace;
+  color: grey;
+  font-size: 40px;
+  text-align: center;
+
+}
+input{
+
+  color: rgb(3, 2, 1);
+  font-family: 'Courier New', Courier, monospace;
+  width: 50%;
+  font-size: 20px;
+
+}
 table, th, td {
-  border: 2px solid #64AE7C;
+  border: 2px #64AE7C;
+  border-style: solid;
+  word-wrap: break-word;
 
 }
 
@@ -23,7 +48,6 @@ table, th, td {
   background-color: #F0BFBF;
   color: white;
   float: left;
- 
   cursor: pointer;
   padding: 14px;
   font-size: 40px;
@@ -42,7 +66,10 @@ table, th, td {
   font-family: 'Courier New', Courier, monospace;
   padding: 100px 20px;
   height: 100%;
+  font-size: 15px;;
+  
 }
+
 </style>
 </head>
 
@@ -52,40 +79,48 @@ table, th, td {
 <body>
 
 <button class="tabs" onclick="openPage('first', this, '#F0BFB')">All Recipes</button>
-<button class="tabs" onclick="openPage('About', this, '#F0BFB')">Add Recipes</button>
+<button class="tabs" onclick="openPage('second', this, '#F0BFB')">Add Recipes</button>
 
 <div id="first" class="tabcontent">
-  <h1>Home</h1>
+  <h2> Recipe Book</h2>
   <p>all of the recipes are listed here</p>
 
 
-  <table style="width:85%">
+  <table style="width:100%">
     <tr>
       <th>Recipen Name</th>
       <th>Recipe</th> 
     </tr>
+    <tr>
+      <td>adrghfdag</td>
+      <td>fagdfgdsfgdsfvvvvfffffffffffsdfsafg fagdfgdsfgdsfvvvvfffffffffffsdfsafg fagdfgdsfgdsfvvvvfffffffffffsdfsafg fagdfgdsfgdsfvvvvfffffffffffsdfsafg</td>
+      </tr>
   </table>
+</div>
+</body>
 
-
-
-
+<body>
+<div id="second" class="tabcontent">
+  <h3>You will be able to add new recipes to your virtual cookbook!</h3>
+  
+  <form action="/dannadon@gmail.com">
+    Recipe Name:
+    <input type="text" name="recipeName" value="">
+    <br>
+    <br>
+    Full Recipe:
+    <input type="text" name="recipe" value="">
+    <br><br>
+    <input type="submit" value="ADD">
+  </form> 
 
 </div>
 
-<div id="News" class="tabcontent">
-  <h3>News</h3>
-  <p>Some news this fine day!</p> 
-</div>
 
-<div id="Contact" class="tabcontent">
-  <h3>Contact</h3>
-  <p>Get in touch, or swing by for a cup of coffee.</p>
-</div>
 
-<div id="About" class="tabcontent">
-  <h3>About</h3>
-  <p>Who we are and what we do.</p>
-</div>
+
+</body>
+
 
 <script>
 function openPage(pageName,elmnt,color) {
@@ -106,5 +141,5 @@ function openPage(pageName,elmnt,color) {
 document.getElementById("defaultOpen").click();
 </script>
    
-</body>
+
 </html> 

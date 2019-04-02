@@ -13,12 +13,26 @@ h1{
   text-align: center;
 
 }
+
+h2{
+  font-family: 'Courier New', Courier, monospace;
+  color: grey;
+  font-size: 45px;
+  text-align: left;
+
+}
 h3{
 
   font-family: 'Courier New', Courier, monospace;
   color: grey;
-  font-size: 50px;
+  font-size: 45px;
   text-align: center;
+
+}
+
+p{
+
+    text-align: left;
 
 }
 input{
@@ -36,11 +50,12 @@ input{
   font-family: 'Courier New', Courier, monospace;
   color: white;
   padding: 30px;
-  text-align: right;
+  text-align: center;
   font-weight: bold;
   font-size: 20px;
   border-radius: 30%;
-  margin: 4px 2px;
+  
+  
 }
 
 .button:hover{
@@ -56,8 +71,8 @@ table, th, td {
 }
 
 .forms{
-
   color:grey;
+  
 }
 
 /* Style tab links */
@@ -84,6 +99,7 @@ table, th, td {
   padding: 100px 20px;
   height: 100%;
   font-size: 20px;
+  text-align: center;
   
 }
 

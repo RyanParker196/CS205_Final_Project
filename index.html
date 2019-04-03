@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+<h1>Grans Recipes</h1>
+</head>
+
+
+
+
+<body>
+
+<button class="tabs" onclick="openPage('first', this, '#F0BFB')">All Recipes</button>
+<button class="tabs" onclick="openPage('second', this, '#F0BFB')">Add Recipes</button>
+
+<div id="first" class="tabcontent">
+  <h2> Recipe Book</h2>
+  <p>all of the recipes are listed in the table below</p>
+  <br>
+
+
+  <table style="width:100%">
+    <tr>
+      <th>Recipe Name</th>
+      <th>Recipe</th> 
+    </tr>
+    <tr>
+      <td>adrghfdag</td>
+      <td>fagdfgdsfgdsfvvvvfffffffffffsdfsafg fagdfgdsfgdsfvvvvfffffffffffsdfsafg  fagdfgdsfgdsfvvvvfffffffffffsdfsafg</td>
+      </tr>
+  </table>
+</div>
+</body>
+
+<body>
+<div id="second" class="tabcontent">
+  <h3>You will be able to add new recipes to your virtual cookbook!</h3>
+  
+  <form class="forms" action="file:///Users/dannadon/Desktop/finalproject/index.html">
+    Recipe Name
+    <input type="text" name="recipeName" value="">
+    <br>
+    <br>
+    Full Recipe
+    <input type="text" name="recipe" value="">
+    <br>
+    <br>
+    <button class="button button1">ADD</button>
+  </form> 
+
+</div>
+</body>
+
+
+
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+
+</html> 

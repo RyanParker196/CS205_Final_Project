@@ -1,0 +1,105 @@
+* {box-sizing: border-box}
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  color: grey;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+h1{
+  font-family: 'Courier New', Courier, monospace;
+  color: grey;
+  font-size: 45px;
+  text-align: center;
+
+}
+
+h2{
+  font-family: 'Courier New', Courier, monospace;
+  color: grey;
+  font-size: 45px;
+  text-align: left;
+
+}
+h3{
+
+  font-family: 'Courier New', Courier, monospace;
+  color: grey;
+  font-size: 45px;
+  text-align: center;
+
+}
+
+p{
+
+    text-align: left;
+
+}
+input{
+
+  color: rgb(3, 2, 1);
+  font-family: 'Courier New', Courier, monospace;
+  width: 90%;
+  font-size: 20px;
+
+}
+
+
+.button {
+  background-color: rgb(223, 152, 59);
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 30%;
+  
+  
+}
+
+.button:hover{
+  background-color: rgb(119, 119, 119);
+
+
+}
+table, th, td {
+  border: 2px #64AE7C;
+  border-style: solid;
+  word-wrap: break-word;
+
+}
+
+.forms{
+  color:grey;
+  
+}
+
+/* Style tab links */
+.tabs {
+  background-color: #F0BFBF;
+  color: white;
+  float: left;
+  cursor: pointer;
+  padding: 14px;
+  font-size: 40px;
+  font-family: 'Courier New', Courier, monospace; 
+  width: 50%;
+ 
+}
+
+.tabs:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: grey;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 100px 20px;
+  height: 100%;
+  font-size: 20px;
+  text-align: center;
+  
+}
+

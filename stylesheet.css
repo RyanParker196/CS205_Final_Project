@@ -9,7 +9,7 @@ body, html {
 h1{
   font-family: 'Courier New', Courier, monospace;
   color: grey;
-  font-size: 45px;
+  font-size: 60px;
   text-align: center;
 
 }
@@ -81,10 +81,11 @@ table, th, td {
   color: white;
   float: left;
   cursor: pointer;
-  padding: 14px;
+  padding: 10px;
   font-size: 40px;
   font-family: 'Courier New', Courier, monospace; 
-  width: 50%;
+  width: 480px;
+  overflow: hidden;
  
 }
 

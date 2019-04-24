@@ -1,0 +1,4 @@
+PassengerAppType wsgi
+PassengerStartupFile /users/m/a/mapeck/www-root/cs205/passenger_wsgi.py
+PassengerAppRoot /users/m/a/mapeck/www-root/cs205
+PassengerPython /usr/local/bin/python35

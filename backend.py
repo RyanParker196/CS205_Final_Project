@@ -11,16 +11,37 @@ app = Flask(__name__)
 
 @app.route("/cs205/")
 def index():
-    cur = connectDB()
+    print("error in POST")
+    cur, sql = connectDB()
     return render_template("index.html", dbTable = displayAll(cur))
 
 # ----------------------------------------------------------------------------------------------------------------------
 
 @app.route("/cs205/", methods=['POST'])
-def indexSearch():
-    cur = connectDB()
-    searchInput = request.form['search']
-    return render_template("index.html", dbTable = displayAll(cur), resultTable = searchDB(cur, searchInput), searchInput = "Results for: " + searchInput)
+def indexPost():
+    print("about to connect cursor")
+    cur, sql = connectDB()
+    print("connected")
+    try:
+        searchInput = request.form['search']
+    except:
+        searchInput = ""
+    try:
+        addNameInput = request.form['recipeName']
+    except:
+        addNameInput = ""
+    try:
+        addDescriptionInput = request.form['description']
+    except:
+        addDescriptionInput = ""
+    # searchInput = ""
+    # addNameInput = 'Test3'
+    # addDescriptionInput = 'Test4'
+    if addNameInput == "" and addDescriptionInput == "":
+        return render_template("index.html", dbTable = searchDB(cur, searchInput), searchInput = searchInput)
+    elif addNameInput != "" and addDescriptionInput != "":
+        addToDB(cur, sql, addNameInput, addDescriptionInput)
+        return render_template("index.html", dbTable=displayAll(cur))
 
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -32,7 +53,7 @@ if __name__ == "__main__":
 def connectDB():
     sql = sqlite3.connect('recipes.db')
     cur = sql.cursor()
-    return cur
+    return cur, sql
 
 # ======================================================================================================================
 
@@ -58,3 +79,7 @@ def searchDB(cur, searchInput):
     return resultTable
 
 # ======================================================================================================================
+
+def addToDB(cur, sql, addNameInput, addDescriptionInput):
+    cur.execute("INSERT INTO recipes (Title, Directions) VALUES (\'"+ addNameInput +"\',\'"+ addDescriptionInput +"\')")
+    sql.commit()

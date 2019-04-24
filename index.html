@@ -7,54 +7,17 @@
   <h1>Grans Recipes</h1>
 </head>
 
-
-
-
+<!--=================================================================================================================-->
 
 <body>
 <button class="tabs" onclick="openPage('first', this, '#F0BFB')" id="defaultOpen">All Recipes</button>
 <button class="tabs" onclick="openPage('second', this, '#F0BFB')">Add Recipes</button>
 <button class="tabs" onclick="openPage('third', this, '#F0BFB')">Delete Recipes</button>
-<button class="tabs" onclick="openPage('fourth', this, '#F0BFB')">Search Recipes</button>
 
+<!--------------------------------------------------------------------------------------------------------------------->
 
 <div id="first" class="tabcontent">
-  <h2> Recipe Book</h2>
-  <p>all of the recipes are listed in the table below</p>
-  <br>
-
-
-  <table style="width:100%">
-    <tr>
-      <th>Recipe Name</th>
-      <th>Recipe</th>
-    </tr>
-      {{ dbTable|safe }}
-  </table>
-</div>
-
-<div id="second" class="tabcontent">
-  <h3>You will be able to add new recipes to your virtual cookbook!</h3>
-
-  <form class="forms" action="file:///Users/dannadon/Desktop/finalproject/index.html">
-    Recipe Name
-    <input type="text" name="recipeName" value="">
-    <br>
-    <br>
-    Full Recipe
-    <input type="text" name="recipe" value="">
-    <br>
-    <br>
-    <button class="button button1">ADD</button>
-  </form>
-</div>
-
-<div id="third" class="tabcontent">
-  <h3>You will be able to delete recipes from your virtual cookbook!</h3>
-</div>
-
-<div id="fourth" class="tabcontent">
-  <h3>Search Recipes Here</h3>
+  <h3>Browse Recipes</h3>
 
   <form method="post" class="forms">
     <b>Search Recipes:</b><br>
@@ -64,7 +27,7 @@
 
   <br>
 
-  {{ searchInput }}
+  <p> Results for: {{ searchInput }} </p>
 
   <br>
 
@@ -73,14 +36,37 @@
       <th>Recipe Name</th>
       <th>Recipe</th>
     </tr>
-    {{ resultTable|safe }}
+    {{ dbTable|safe }}
   </table>
+</div>
+
+<!--------------------------------------------------------------------------------------------------------------------->
+
+<div id="second" class="tabcontent">
+  <h3>You will be able to add new recipes to your virtual cookbook!</h3>
+
+  <form method="post" class="forms" action="https://mapeck.w3.uvm.edu/cs205/">
+    Recipe Name
+    <input type="text" name="recipeName" value="">
+    <br>
+    <br>
+    Full Recipe
+    <input type="text" name="description" value="">
+    <br>
+    <br>
+    <button class="button">ADD</button>
+  </form>
+</div>
+
+<!--------------------------------------------------------------------------------------------------------------------->
+
+<div id="third" class="tabcontent">
+  <h3>You will be able to delete recipes from your virtual cookbook!</h3>
 </div>
 
 </body>
 
-
-
+<!--=================================================================================================================-->
 
 <script>
   function openPage(pageName,elmnt,color) {

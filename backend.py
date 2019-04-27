@@ -11,17 +11,14 @@ app = Flask(__name__)
 
 @app.route("/cs205/")
 def index():
-    print("error in POST")
     cur, sql = connectDB()
-    return render_template("index.html", dbTable = displayAll(cur))
+    return render_template("index.html", dbTable = displayAll(cur, checkBoxes = False), delTable = displayAll(cur, checkBoxes = True))
 
 # ----------------------------------------------------------------------------------------------------------------------
 
 @app.route("/cs205/", methods=['POST'])
 def indexPost():
-    print("about to connect cursor")
     cur, sql = connectDB()
-    print("connected")
     try:
         searchInput = request.form['search']
     except:
@@ -34,14 +31,18 @@ def indexPost():
         addDescriptionInput = request.form['description']
     except:
         addDescriptionInput = ""
-    # searchInput = ""
-    # addNameInput = 'Test3'
-    # addDescriptionInput = 'Test4'
-    if addNameInput == "" and addDescriptionInput == "":
-        return render_template("index.html", dbTable = searchDB(cur, searchInput), searchInput = searchInput)
+    if searchInput == "" and addNameInput == "" and addDescriptionInput == "":
+        testVar = delFromDB(cur, sql)
+        return render_template("index.html", dbTable=displayAll(cur, checkBoxes=False),
+                           delTable=displayAll(cur, checkBoxes=True), testVar = testVar)
+    elif addNameInput == "" and addDescriptionInput == "" and searchInput != "":
+        return render_template("index.html", dbTable = searchDB(cur, searchInput), searchInput = "Results for: " + searchInput)
     elif addNameInput != "" and addDescriptionInput != "":
         addToDB(cur, sql, addNameInput, addDescriptionInput)
-        return render_template("index.html", dbTable=displayAll(cur))
+        return render_template("index.html", dbTable = displayAll(cur, checkBoxes = False), delTable = displayAll(cur, checkBoxes = True))
+    else:
+        return render_template("index.html", dbTable=displayAll(cur, checkBoxes=False),
+                               delTable=displayAll(cur, checkBoxes=True))
 
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -57,12 +58,17 @@ def connectDB():
 
 # ======================================================================================================================
 
-def displayAll(cur):
+def displayAll(cur, checkBoxes):
     dbTable = ''
     cur.execute("SELECT * FROM recipes")
     entireDB = cur.fetchall()
+    checkBoxNameCounter = 0
     for entry in entireDB:
-        dbTable += '<tr><td>' + str(entry[0]) + '</td><td>'+str(entry[1]) + '</td></tr>'
+        if checkBoxes == True:
+            dbTable += '<tr><td><input type = "checkbox" name = \"' + str(checkBoxNameCounter) + '\" value = "delete" /></td><td>' + str(entry[0]) + '</td><td>'+str(entry[1]) + '</td></tr>'
+            checkBoxNameCounter += 1
+        else:
+            dbTable += '<tr><td>' + str(entry[0]) + '</td><td>'+str(entry[1]) + '</td></tr>'
     return dbTable
 
 # ======================================================================================================================
@@ -83,3 +89,21 @@ def searchDB(cur, searchInput):
 def addToDB(cur, sql, addNameInput, addDescriptionInput):
     cur.execute("INSERT INTO recipes (Title, Directions) VALUES (\'"+ addNameInput +"\',\'"+ addDescriptionInput +"\')")
     sql.commit()
+
+# ======================================================================================================================
+
+def delFromDB(cur, sql):
+    cur.execute("SELECT * FROM recipes")
+    entireDB = cur.fetchall()
+    index = 0
+    testVar = ""
+    for entry in entireDB:
+        try:
+            if request.form[str(index)] == "delete":
+                testVar += str(index) + ", "
+                cur.execute("DELETE FROM recipes WHERE Title = \"" + entry[0] + "\"")
+        except:
+            print("error")
+        index += 1
+    sql.commit()
+    return testVar

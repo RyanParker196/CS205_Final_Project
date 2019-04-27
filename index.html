@@ -10,9 +10,12 @@
 <!--=================================================================================================================-->
 
 <body>
-<button class="tabs" onclick="openPage('first', this, '#F0BFB')" id="defaultOpen">All Recipes</button>
-<button class="tabs" onclick="openPage('second', this, '#F0BFB')">Add Recipes</button>
-<button class="tabs" onclick="openPage('third', this, '#F0BFB')">Delete Recipes</button>
+
+<div class="navbar">
+  <button class="tabs" onclick="openPage('first', this, '#F0BFB')" id="defaultOpen">All Recipes</button>
+  <button class="tabs" onclick="openPage('second', this, '#F0BFB')">Add Recipes</button>
+  <button class="tabs" onclick="openPage('third', this, '#F0BFB')">Delete Recipes</button>
+</div>
 
 <!--------------------------------------------------------------------------------------------------------------------->
 
@@ -27,7 +30,7 @@
 
   <br>
 
-  <p> Results for: {{ searchInput }} </p>
+  <p> {{ searchInput }} </p>
 
   <br>
 
@@ -43,7 +46,7 @@
 <!--------------------------------------------------------------------------------------------------------------------->
 
 <div id="second" class="tabcontent">
-  <h3>You will be able to add new recipes to your virtual cookbook!</h3>
+  <h3>Add a Recipe Below:</h3>
 
   <form method="post" class="forms" action="https://mapeck.w3.uvm.edu/cs205/">
     Recipe Name
@@ -61,7 +64,23 @@
 <!--------------------------------------------------------------------------------------------------------------------->
 
 <div id="third" class="tabcontent">
-  <h3>You will be able to delete recipes from your virtual cookbook!</h3>
+  <h3>Select Recipes to Delete from the Database Below:</h3>
+
+  testVar: {{testVar}}
+
+  <form method="post" class="forms">
+    <table style="width:100%">
+      <tr>
+        <th>Delete?</th>
+        <th>Recipe Name</th>
+        <th>Recipe</th>
+      </tr>
+      {{ delTable|safe }}
+    </table>
+    <input class = "buttonDelete" type="submit" value="Delete Selected">
+  </form>
+
+
 </div>
 
 </body>
@@ -85,7 +104,13 @@
 
   // Get the element with id="defaultOpen" and click on it
   document.getElementById("defaultOpen").click();
+
+
+
+
+
+
 </script>
 
 
-</html> 
+</html>

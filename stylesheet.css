@@ -39,9 +39,13 @@ input{
 
   color: rgb(3, 2, 1);
   font-family: 'Courier New', Courier, monospace;
-  width: 90%;
   font-size: 20px;
 
+}
+  width: 90%;
+.buttonDelete{
+
+  background-color: black;
 }
 
 
@@ -85,7 +89,7 @@ table, th, td {
   font-size: 40px;
   font-family: 'Courier New', Courier, monospace; 
   width: 33.333333%;
-  overflow: hidden;
+
  
 }
 
@@ -101,6 +105,7 @@ table, th, td {
   height: 100%;
   font-size: 20px;
   text-align: center;
-  
+
 }
 
+}

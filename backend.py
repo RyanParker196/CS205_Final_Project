@@ -31,15 +31,31 @@ def indexPost():
         addDescriptionInput = request.form['description']
     except:
         addDescriptionInput = ""
+
+    # ------------------------------------------------------------------------------------------------------------------
+
+    #User is attempting to delete from database:
     if searchInput == "" and addNameInput == "" and addDescriptionInput == "":
         testVar = delFromDB(cur, sql)
         return render_template("index.html", dbTable=displayAll(cur, checkBoxes=False),
                            delTable=displayAll(cur, checkBoxes=True), testVar = testVar)
+
+    # ------------------------------------------------------------------------------------------------------------------
+
+    # User is attempting to search database:
     elif addNameInput == "" and addDescriptionInput == "" and searchInput != "":
-        return render_template("index.html", dbTable = searchDB(cur, searchInput), searchInput = "Results for: " + searchInput)
+        return render_template("index.html", dbTable = searchDB(cur, searchInput), searchInput = "Results for: " + searchInput, delTable = displayAll(cur, checkBoxes = True))
+
+    # ------------------------------------------------------------------------------------------------------------------
+
+    # User is attempting to add to database:
     elif addNameInput != "" and addDescriptionInput != "":
         addToDB(cur, sql, addNameInput, addDescriptionInput)
         return render_template("index.html", dbTable = displayAll(cur, checkBoxes = False), delTable = displayAll(cur, checkBoxes = True))
+
+    # ------------------------------------------------------------------------------------------------------------------
+
+    # User is pressing search to display entire database:
     else:
         return render_template("index.html", dbTable=displayAll(cur, checkBoxes=False),
                                delTable=displayAll(cur, checkBoxes=True))

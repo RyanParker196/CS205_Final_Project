@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+  <link rel="stylesheet" type="text/css" href="Gransstylesheet.css"/>
   <title>RECIPES</title>
   <h1>Grans Recipes</h1>
 </head>
@@ -23,9 +23,11 @@
   <h3>Browse Recipes</h3>
 
   <form method="post" class="forms">
-    <b>Search Recipes:</b><br>
-    <input type="text" name="search" placeholder="Enter Search Here"><br>
-    <input type="submit" value="Search">
+    <p><b>Search Recipes:</b></p>
+    <input type="text" name="search" placeholder="Enter Search Here">
+    <br>
+    <br>
+    <input class = "buttonSubmit" type="submit" value="Search">
   </form>
 
   <br>
@@ -49,12 +51,13 @@
   <h3>Add a Recipe Below:</h3>
 
   <form method="post" class="forms" action="https://mapeck.w3.uvm.edu/cs205/">
-    Recipe Name
-    <input type="text" name="recipeName" value="">
+    <p>Recipe Name</p>
+
+    <textarea  rows="1" cols="50" name="recipeName"></textarea>
     <br>
-    <br>
-    Full Recipe
-    <input type="text" name="description" value="">
+
+    <p>Full Recipe</p>
+    <textarea  rows="4" cols="50" name="description"></textarea>
     <br>
     <br>
     <button class="button">ADD</button>
@@ -65,10 +68,8 @@
 
 <div id="third" class="tabcontent">
   <h3>Select Recipes to Delete from the Database Below:</h3>
-
-  testVar: {{testVar}}
-
   <form method="post" class="forms">
+    <div class = "sticky" > <input class = "buttonDelete" type="submit" value="Delete Selected"> </div>
     <table style="width:100%">
       <tr>
         <th>Delete?</th>
@@ -77,7 +78,6 @@
       </tr>
       {{ delTable|safe }}
     </table>
-    <input class = "buttonDelete" type="submit" value="Delete Selected">
   </form>
 
 

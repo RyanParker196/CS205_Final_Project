@@ -1,0 +1,150 @@
+* {box-sizing: border-box}
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  color: grey;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+h1{
+  font-family: 'Courier New', Courier, monospace;
+  color: grey;
+  font-size: 60px;
+  text-align: center;
+
+}
+
+h2{
+  font-family: 'Courier New', Courier, monospace;
+  color: grey;
+  font-size: 45px;
+  text-align: left;
+
+}
+h3{
+
+  font-family: 'Courier New', Courier, monospace;
+  color: grey;
+  font-size: 45px;
+  text-align: center;
+
+}
+
+p{
+
+    text-align: center;
+
+}
+input,textarea {
+
+  color: green;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+
+
+  width: 90%;
+
+}
+
+
+
+.button {
+  background-color: rgb(223, 152, 59);
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 30%;
+  
+  
+}
+
+
+.buttonDelete{
+
+  background-color: rgb(223, 152, 59);
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 7%;
+  width:20%
+
+}
+
+.buttonSubmit{
+
+  background-color: rgb(223, 152, 59);
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 30%;
+  width:8%
+
+}
+
+.button:hover{
+  background-color: rgb(119, 119, 119);
+
+
+}
+table, th, td {
+  border: 2px #64AE7C;
+  border-style: solid;
+  word-wrap: break-word;
+
+}
+
+.forms{
+  color:grey;
+  
+}
+
+/* Style tab links */
+.tabs {
+  background-color: #F0BFBF;
+  color: white;
+  float: left;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 40px;
+  font-family: 'Courier New', Courier, monospace; 
+  width: 33.333333%;
+
+ 
+}
+
+.tabs:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: grey;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 100px 20px;
+  height: 100%;
+  font-size: 20px;
+  text-align: center;
+
+}
+div.sticky{
+
+
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 10px;
+  font-size: 20px;
+  border-bottom-width: 1px;
+  border-bottom-color: #64AE7C;
+  border-bottom-style: solid;
+}

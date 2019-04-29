@@ -20,6 +20,9 @@
 <!--------------------------------------------------------------------------------------------------------------------->
 
 <div id="first" class="tabcontent">
+
+  {{ status|safe }}
+
   <h3>Browse Recipes</h3>
 
   <form method="post" class="forms">
@@ -27,7 +30,7 @@
     <input type="text" name="search" placeholder="Enter Search Here">
     <br>
     <br>
-    <input class = "buttonSubmit" type="submit" value="Search">
+    <input class = "buttonSubmit" type="submit" value="Search" align="center">
   </form>
 
   <br>
@@ -43,19 +46,21 @@
     </tr>
     {{ dbTable|safe }}
   </table>
+
 </div>
 
 <!--------------------------------------------------------------------------------------------------------------------->
 
 <div id="second" class="tabcontent">
+
+  {{ status|safe }}
+
   <h3>Add a Recipe Below:</h3>
 
   <form method="post" class="forms" action="https://mapeck.w3.uvm.edu/cs205/">
     <p>Recipe Name</p>
-
     <textarea  rows="1" cols="50" name="recipeName"></textarea>
     <br>
-
     <p>Full Recipe</p>
     <textarea  rows="4" cols="50" name="description"></textarea>
     <br>
@@ -67,19 +72,22 @@
 <!--------------------------------------------------------------------------------------------------------------------->
 
 <div id="third" class="tabcontent">
+
+  {{ status|safe }}
+
   <h3>Select Recipes to Delete from the Database Below:</h3>
+
   <form method="post" class="forms">
     <div class = "sticky" > <input class = "buttonDelete" type="submit" value="Delete Selected"> </div>
     <table style="width:100%">
       <tr>
-        <th>Delete?</th>
+        <th>Delete</th>
         <th>Recipe Name</th>
         <th>Recipe</th>
       </tr>
       {{ delTable|safe }}
     </table>
   </form>
-
 
 </div>
 
@@ -105,12 +113,8 @@
   // Get the element with id="defaultOpen" and click on it
   document.getElementById("defaultOpen").click();
 
-
-
-
-
-
 </script>
 
+<!--=================================================================================================================-->
 
 </html>

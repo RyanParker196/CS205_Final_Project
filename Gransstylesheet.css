@@ -6,12 +6,12 @@ body, html {
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
 }
+
 h1{
   font-family: 'Courier New', Courier, monospace;
   color: grey;
   font-size: 60px;
   text-align: center;
-
 }
 
 h2{
@@ -19,34 +19,25 @@ h2{
   color: grey;
   font-size: 45px;
   text-align: left;
-
 }
-h3{
 
+h3{
   font-family: 'Courier New', Courier, monospace;
   color: grey;
   font-size: 45px;
   text-align: center;
-
 }
 
 p{
-
     text-align: center;
-
 }
-input,textarea {
 
+input,textarea {
   color: green;
   font-family: 'Courier New', Courier, monospace;
   font-size: 20px;
-
-
   width: 90%;
-
 }
-
-
 
 .button {
   background-color: rgb(223, 152, 59);
@@ -57,13 +48,9 @@ input,textarea {
   font-weight: bold;
   font-size: 20px;
   border-radius: 30%;
-  
-  
 }
 
-
 .buttonDelete{
-
   background-color: rgb(223, 152, 59);
   font-family: 'Courier New', Courier, monospace;
   color: white;
@@ -73,38 +60,36 @@ input,textarea {
   font-size: 20px;
   border-radius: 7%;
   width:20%
-
 }
 
 .buttonSubmit{
-
   background-color: rgb(223, 152, 59);
   font-family: 'Courier New', Courier, monospace;
   color: white;
-  padding: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   text-align: center;
   font-weight: bold;
   font-size: 20px;
   border-radius: 30%;
-  width:8%
-
+  width:8%;
 }
 
 .button:hover{
   background-color: rgb(119, 119, 119);
-
-
 }
+
 table, th, td {
   border: 2px #64AE7C;
   border-style: solid;
   word-wrap: break-word;
-
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 auto;
 }
 
 .forms{
   color:grey;
-  
 }
 
 /* Style tab links */
@@ -117,8 +102,6 @@ table, th, td {
   font-size: 40px;
   font-family: 'Courier New', Courier, monospace; 
   width: 33.333333%;
-
- 
 }
 
 .tabs:hover {
@@ -133,11 +116,9 @@ table, th, td {
   height: 100%;
   font-size: 20px;
   text-align: center;
-
 }
+
 div.sticky{
-
-
   position: -webkit-sticky;
   position: sticky;
   top: 0;

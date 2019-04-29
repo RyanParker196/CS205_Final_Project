@@ -84,8 +84,9 @@ table, th, td {
   border-style: solid;
   word-wrap: break-word;
   text-align: center;
-  vertical-align: middle;
-  margin: 0 auto;
+
+  text-align: center; /* center checkbox horizontally */
+  vertical-align: middle; /* center checkbox vertically */
 }
 
 .forms{
